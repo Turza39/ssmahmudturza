@@ -665,6 +665,40 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
+function showCustomAlert() {
+    console.log("showCustomAlert triggered");
+
+    // 1) Create the element
+    const alertBox = document.createElement('div');
+    alertBox.className = 'easter-egg-alert';
+
+    // 2) Add inner HTML
+    alertBox.innerHTML = `
+        <div class="alert-content">
+            <div class="alert-icon">🎉</div>
+            <h2>Congratulations!</h2>
+            <p>You discovered the secret Konami Code!</p>
+            <p class="alert-subtext">↑ ↑ ↓ ↓ ← → ← → B A</p>
+            <p>Thanks for exploring my portfolio! 🚀</p>
+            <button class="alert-btn">Awesome!</button>
+        </div>
+    `;
+
+    // 3) Append to body
+    document.body.appendChild(alertBox);
+
+    // 4) Now safe to access the button
+    const closeBtn = alertBox.querySelector(".alert-btn");
+    closeBtn.addEventListener("click", () => {
+        alertBox.remove();
+    });
+
+    // 5) Add “show” animation after append
+    setTimeout(() => {
+        alertBox.classList.add("show");
+    }, 100);
+}
+
 function activateEasterEgg() {
     // Create confetti effect
     createConfetti();
@@ -706,25 +740,6 @@ function createConfetti() {
     }
 }
 
-function showCustomAlert() {
-    const alertBox = document.createElement('div');
-    alertBox.className = 'easter-egg-alert';
-    alertBox.innerHTML = `
-        <div class="alert-content">
-            <div class="alert-icon">🎉</div>
-            <h2>Congratulations!</h2>
-            <p>You discovered the secret Konami Code!</p>
-            <p class="alert-subtext">↑ ↑ ↓ ↓ ← → ← → B A</p>
-            <p>Thanks for exploring my portfolio! 🚀</p>
-            <button class="alert-btn" onclick="this.parentElement.parentElement.remove()">Awesome!</button>
-        </div>
-    `;
-    document.body.appendChild(alertBox);
-    
-    setTimeout(() => {
-        alertBox.classList.add('show');
-    }, 100);
-}
 
 // ============================================
 // PERFORMANCE OPTIMIZATION
@@ -872,27 +887,6 @@ const observer = new IntersectionObserver((entries) => {
 //     contactForm.reset();
 // });
 
-// ============================================
-// INITIALIZE EVERYTHING
-// ============================================
-
-function init() {
-    // Populate all dynamic content
-    populateSkills();
-    populateProjects();
-    populateExperience();
-    populateCertifications();
-    
-    // Observe all sections and fade-in elements
-    const sections = document.querySelectorAll('section');
-    const fadeElements = document.querySelectorAll('.fade-in');
-    
-    sections.forEach(section => observer.observe(section));
-    fadeElements.forEach(element => observer.observe(element));
-}
-
-// Run initialization when DOM is loaded
-document.addEventListener('DOMContentLoaded', init);
 
 // ============================================
 // SMOOTH SCROLL
