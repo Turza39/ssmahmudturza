@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S. S. Mahmud Turza | Full Stack Developer & AI Enthusiast</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">SSMT</div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#research" class="nav-link">Research</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="glitch" data-text="S. S. Mahmud Turza">S. S. Mahmud Turza</h1>
+                <p class="typing-text"></p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                    <a href="#projects" class="btn btn-secondary">View Work</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/yourprofile" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/yourprofile" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+                    <a href="https://kaggle.com/yourprofile" target="_blank" class="social-icon"><i class="fab fa-kaggle"></i></a>
+                    <a href="mailto:mahmudturza@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-container">
+                    <div class="orbit orbit-1"></div>
+                    <div class="orbit orbit-2"></div>
+                    <div class="orbit orbit-3"></div>
+                    <div class="profile-circle"></div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="lead">Aspiring Full Stack Developer skilled in Python and JavaScript with hands-on experience building interactive, scalable web applications.</p>
+                    <p>Proficient with React, Node.js, and Express; familiar with SQL and RESTful API design. Comfortable debugging, learning new frameworks, integrating AI-driven features and RAG systems.</p>
+                    <p>Interested in Machine Learning, fine tuning Deep Learning and Large Language Models</p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <h3 id="projectCount" class="counter">0</h3>
+                            <p>Projects</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3 id="techCount" class="counter">0</h3>
+                            <p>Technologies</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3 id="certCount" class="counter">0</h3>
+                            <p>Certifications</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-education">
+                    <div class="education-card">
+                        <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <h3>BSc in Computer Science and Engineering</h3>
+                        <p class="institution">Shahjalal University of Science and Technology (SUST)</p>
+                        <p class="year">2023 - Present</p>
+                        <p class="gpa">CGPA: 3.50/4.00</p>
+                    </div>
+                    <div class="education-card">
+                        <div class="edu-icon"><i class="fas fa-school"></i></div>
+                        <h3>Higher Secondary Certificate (HSC)</h3>
+                        <p class="institution">Notre Dame College, Dhaka</p>
+                        <p class="year">2018 - 2020</p>
+                        <p class="gpa">GPA: 5.00/5.00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-container" id="skillsContainer"></div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid" id="projectsGrid"></div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title">Experience & Achievements</h2>
+            <div class="timeline" id="experienceTimeline"></div>
+        </div>
+    </section>
+
+        <!-- Research Section -->
+    <section id="research" class="research">
+        <div class="container">
+            <h2 class="section-title">Research & Interests</h2>
+            <div class="research-intro">
+                <p>I'm passionate about exploring cutting-edge technologies and contributing to the advancement of AI and software engineering. Here are my research interests and academic pursuits.</p>
+            </div>
+            <div class="research-grid" id="researchGrid"></div>
+            
+            <div class="research-interests">
+                <h3>Areas of Interest</h3>
+                <div class="interests-container" id="interestsContainer"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications">
+        <div class="container">
+            <h2 class="section-title">Certifications</h2>
+            <div class="certifications-grid" id="certificationsGrid"></div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content-center">
+                <div class="contact-info">
+                    <!-- <h3>Let's Connect!</h3> -->
+                    <p>I'm always open to discussing new projects, creative ideas, research collaborations, or opportunities to be part of your visions.</p>
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <a href="mailto:mahmudturza@gmail.com">mahmudturza@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <a href="tel:+8801781286700">01781286700</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Location</h4>
+                                <p>Sylhet, Bangladesh</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-linkedin"></i>
+                            <div>
+                                <h4>LinkedIn</h4>
+                                <a href="https://www.linkedin.com/in/s-s-mahmud-turza-30034b226/" target="_blank">Connect with me</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-github"></i>
+                            <div>
+                                <h4>GitHub</h4>
+                                <a href="https://github.com/Turza39" target="_blank">View my code</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-kaggle"></i>
+                            <div>
+                                <h4>Kaggle</h4>
+                                <a href="https://www.kaggle.com/ssmahmudturza" target="_blank">Check my competitions</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 S. S. Mahmud Turza. All rights reserved.</p>
+            <div class="footer-social">
+                <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/yourprofile" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://kaggle.com/yourprofile" target="_blank"><i class="fab fa-kaggle"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
