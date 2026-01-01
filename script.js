@@ -94,7 +94,7 @@ research: [
             type: "Conference Paper",
             icon: "fas fa-leaf",
             year: "2025",
-            status: "Published", // or "completed", "published", "under-review"
+            status: "published", // or "completed", "published", "under-review"
             abstract: "This research explores deep learning methodologies for identifying and classifying invasive alien plant species in Bangladesh using computer vision techniques.",
             links: {
                 paper: null, // Add link when available
