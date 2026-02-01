@@ -36,12 +36,17 @@ const CONFIG = {
         {
             category: "Database",
             icon: "fas fa-database",
-            items: ["MySQL", "SQLAlchemy", "MongoDB", "FireBase"]
+            items: ["MySQL", , "MongoDB", "FireBase"]
         },
         {
             category: "ML/AI",
             icon: "fas fa-robot",
             items: ["PyTorch", "Scikit-learn", "HuggingFace", "Langchain", "RAG"]
+        },
+        {
+            category: "Cloud & AWS",
+            icon: "fas fa-cloud",
+            items: ["AWS EC2", "AWS S3", "AWS Lambda", "AWS RDS", "AWS ECR", "AWS ECS", "CloudFormation"]
         },
         {
             category: "Tools",
@@ -131,6 +136,11 @@ research: [
             icon: "fas fa-code-branch",
             title: "Full Stack Development",
             description: "Creating scalable and maintainable web applications"
+        },
+        {
+            icon: "fas fa-cloud-upload-alt",
+            title: "Cloud Development & Deployment",
+            description: "Building and deploying scalable applications on cloud platforms like AWS"
         }
     ],
 
@@ -169,6 +179,18 @@ research: [
             issuer: "KodeKloud",
             date: "2025",
             link: "https://learn.kodekloud.com/certificate/868267ed-26d1-499f-94e6-e5b37ee4846a"
+        },
+        {
+            title: "AWS Academy Graduate - Cloud Foundations - Training Badge",
+            issuer: "Amazon Web Services",
+            date: "01/07/2026",
+            link: "https://www.credly.com/go/oCRz9gio"
+        },
+        {
+            title: "AWS Academy Graduate - Cloud Developing - Training Badge",
+            issuer: "Amazon Web Services",
+            date: "01/20/2026",
+            link: "https://www.credly.com/go/Ct7zMT7u"
         }
     ]
 };
@@ -216,6 +238,16 @@ window.addEventListener('scroll', () => {
 hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
     navMenu.classList.toggle('active');
+});
+
+// Close menu when clicking outside the navbar
+document.addEventListener('click', (e) => {
+    const isClickInsideNav = navbar.contains(e.target);
+    
+    if (!isClickInsideNav && navMenu.classList.contains('active')) {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+    }
 });
 
 // Active nav link and smooth close on mobile
@@ -527,57 +559,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ============================================
-// CURSOR ANIMATION (Optional Enhancement)
+// CURSOR ANIMATION - REMOVED
 // ============================================
-
-const cursor = document.createElement('div');
-cursor.className = 'custom-cursor';
-document.body.appendChild(cursor);
-
-const cursorFollower = document.createElement('div');
-cursorFollower.className = 'cursor-follower';
-document.body.appendChild(cursorFollower);
-
-let mouseX = 0, mouseY = 0;
-let followerX = 0, followerY = 0;
-
-document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    
-    cursor.style.left = mouseX + 'px';
-    cursor.style.top = mouseY + 'px';
-});
-
-function animateFollower() {
-    const distX = mouseX - followerX;
-    const distY = mouseY - followerY;
-    
-    followerX += distX / 10;
-    followerY += distY / 10;
-    
-    cursorFollower.style.left = followerX + 'px';
-    cursorFollower.style.top = followerY + 'px';
-    
-    requestAnimationFrame(animateFollower);
-}
-
-animateFollower();
-
-// Add hover effects for interactive elements
-const interactiveElements = document.querySelectorAll('a, button, .btn, .social-icon, .project-card, .skill-tag, .research-card, .interest-item');
-
-interactiveElements.forEach(el => {
-    el.addEventListener('mouseenter', () => {
-        cursor.classList.add('cursor-hover');
-        cursorFollower.classList.add('cursor-hover');
-    });
-    
-    el.addEventListener('mouseleave', () => {
-        cursor.classList.remove('cursor-hover');
-        cursorFollower.classList.remove('cursor-hover');
-    });
-});
 
 // ============================================
 // PARALLAX EFFECT ON SCROLL
