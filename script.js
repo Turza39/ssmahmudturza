@@ -21,22 +21,22 @@ const CONFIG = {
         {
             category: "Languages",
             icon: "fas fa-code",
-            items: ["Python", "JavaScript", "C++", "Java"]
+            items: ["Python", "JavaScript", "TypeScript", "C++", "Java"]
         },
         {
             category: "Frontend",
             icon: "fas fa-laptop-code",
-            items: ["React.js", "HTML", "CSS", "JavaScript"]
+            items: ["React.js", "Vite", "HTML", "CSS"]
         },
         {
             category: "Backend",
             icon: "fas fa-server",
-            items: ["Node.js", "Express.js", "FastAPI"]
+            items: ["Node.js", "Express.js", "FastAPI", "Spring Boot"]
         },
         {
             category: "Database",
             icon: "fas fa-database",
-            items: ["MySQL", , "MongoDB", "FireBase"]
+            items: ["MySQL", "PostGreSQL", "MongoDB", "FireBase", "Vector Databases"]
         },
         {
             category: "ML/AI",
@@ -51,12 +51,20 @@ const CONFIG = {
         {
             category: "Tools",
             icon: "fas fa-tools",
-            items: ["Git", "GitHub", "Docker", "VS Code"]
+            items: ["Git", "GitHub", "Docker", "VS Code", "WebSocket"]
         }
     ],
 
     // Projects
     projects: [
+        {
+            title: "API & Load Tester — VS Code Extension",
+            type: "Personal Project",
+            description: "A full-featured API testing and load testing tool built as a VS Code extension.",
+            technologies: ["TypeScript", "React", "Vite", "Spring Boot (WebFlux/Netty)", "Java", "WebSocket", "Recharts"],
+            github: "https://github.com/Turza39/api-tester-extension",
+            live: null
+        },
         {
             title: "Tour Package Platform",
             type: "Team Project",
@@ -106,6 +114,13 @@ research: [
                 github: null,
                 slides: null
             }
+        },
+        {
+            title: "Analyzing & Forecasting River Morphological Evolution Using Machine Learning & Spatiotemporal Neural Models.",
+            conference: "Shahjalal University of Science and Technology",
+            type: "Thesis (Ongoing)",
+            status: "Ongoing Thesis", 
+            year: "2026"
         }
         // Add more research papers here as needed
     ],
@@ -147,6 +162,12 @@ research: [
     // Experience & Achievements
     experience: [
         {
+            title: " SYMPSIST- 2025 Pitch Competition",
+            organization: "IEEE IUBAT",
+            date: "2025",
+            description: "Placed 1st runner up."
+        },
+        {
             title: "Executive Member",
             organization: "SUST CSE Society",
             date: "July 2023 - Dec 2023",
@@ -155,7 +176,7 @@ research: [
         {
             title: "DU AI Challenge",
             organization: "Dhaka University",
-            date: "2024",
+            date: "2025",
             description: "Placed 19th out of 44 teams in competitive AI challenge."
         },
         {
