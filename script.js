@@ -10,18 +10,18 @@ const CONFIG = {
     // Personal Info
     name: "S. S. Mahmud Turza",
     titles: [
-        "Full Stack Developer",
-        "AI Enthusiast",
+        "Backend Developer",
+        "Researcher",
         "Undergraduate Student",
         "Problem Solver"
     ],
-    
+
     // Skills organized by category
     skills: [
         {
             category: "Languages",
             icon: "fas fa-code",
-            items: ["Python", "JavaScript", "TypeScript", "C++", "Java"]
+            items: ["Python", "JavaScript", "C++", "Java"]
         },
         {
             category: "Frontend",
@@ -31,7 +31,7 @@ const CONFIG = {
         {
             category: "Backend",
             icon: "fas fa-server",
-            items: ["Node.js", "Express.js", "FastAPI", "Spring Boot"]
+            items: ["Node.js", "Express.js", "FastAPI", "REST API"]
         },
         {
             category: "Database",
@@ -41,7 +41,7 @@ const CONFIG = {
         {
             category: "ML/AI",
             icon: "fas fa-robot",
-            items: ["PyTorch", "Scikit-learn", "HuggingFace", "Langchain", "RAG"]
+            items: ["PyTorch", "Scikit-learn", "LLM", "RAG", "Langchain", "Embeddings"]
         },
         {
             category: "Cloud & AWS",
@@ -49,10 +49,41 @@ const CONFIG = {
             items: ["AWS EC2", "AWS S3", "AWS Lambda", "AWS RDS", "AWS ECR", "AWS ECS", "CloudFormation"]
         },
         {
-            category: "Tools",
+            category: "System Design",
+            icon: "fas fa-sitemap",
+            items: ["Microservices Architecture", "Distributed Systems"]
+        },
+        {
+            category: "Async & Messaging",
+            icon: "fas fa-exchange-alt",
+            items: ["Background Jobs (Celery/Workers)", "Message Queues (RabbitMQ)"]
+        },
+        {
+            category: "Caching & Performance",
+            icon: "fas fa-tachometer-alt",
+            items: ["Redis (Caching, Rate Limiting)"]
+        },
+        {
+            category: "Search Systems",
+            icon: "fas fa-search",
+            items: ["Full-Text Search", "Vector Search"]
+        },
+        {
+            category: "Observability",
+            icon: "fas fa-chart-line",
+            items: ["Prometheus (Metrics)", "Grafana (Dashboards)"]
+        },
+        {
+            category: "Networking",
+            icon: "fas fa-network-wired",
+            items: ["NGINX (Reverse Proxy, Load Balancing)"]
+        },
+        {
+            category: "Dev Tools",
             icon: "fas fa-tools",
-            items: ["Git", "GitHub", "Docker", "VS Code", "WebSocket"]
+            items: ["Docker", "Git", "WebSocket"]
         }
+
     ],
 
     // Projects
@@ -60,10 +91,10 @@ const CONFIG = {
         {
             title: "API & Load Tester — VS Code Extension",
             type: "Personal Project",
-            description: "A full-featured API testing and load testing tool built as a VS Code extension.",
+            description: "Developed a VS Code extension that combines a full-featured API client with OpenAPI auto-discovery and a real-time load testing engine, powered by Spring WebFlux and WebSocket dashboards for scalable, high-concurrency performance monitoring.",
             technologies: ["TypeScript", "React", "Vite", "Spring Boot (WebFlux/Netty)", "Java", "WebSocket", "Recharts"],
             github: "https://github.com/Turza39/api-tester-extension",
-            live: null
+            live: "https://marketplace.visualstudio.com/items?itemName=ssmahmudturza.api-load-tester"
         },
         {
             title: "Tour Package Platform",
@@ -100,7 +131,7 @@ const CONFIG = {
     ],
 
     // Research (NEW)
-research: [
+    research: [
         {
             title: "Deep Learning Approaches for Classifying Invasive Alien Plant Species in Bangladesh",
             conference: "28th International Conference on Computer and Information Technology (28th ICCIT 2025)",
@@ -119,7 +150,7 @@ research: [
             title: "Analyzing & Forecasting River Morphological Evolution Using Machine Learning & Spatiotemporal Neural Models.",
             conference: "Shahjalal University of Science and Technology",
             type: "Thesis (Ongoing)",
-            status: "Ongoing Thesis", 
+            status: "Ongoing Thesis",
             year: "2026"
         }
         // Add more research papers here as needed
@@ -128,37 +159,36 @@ research: [
     // Research Interests
     interests: [
         {
-            icon: "fas fa-robot",
-            title: "Large Language Model (LLM)",
-            description: "Exploring the fundamentals of modern language models and their real-world applications."
+            icon: "fas fa-brain",
+            title: "Deep Learning & Research",
+            description: "Exploring deep learning models and working on research-driven solutions for real-world problems."
         },
         {
-            icon: "fas fa-brain",
-            title: "Machine Learning",
-            description: "Developing predictive models and recommendation systems"
+            icon: "fas fa-robot",
+            title: "Large Language Models (LLMs)",
+            description: "Building and experimenting with LLM-based systems, including RAG and AI-powered applications."
+        },
+        {
+            icon: "fas fa-server",
+            title: "Backend & System Design",
+            description: "Designing scalable APIs, distributed systems, and high-performance backend architectures."
+        },
+        {
+            icon: "fas fa-network-wired",
+            title: "Distributed Systems",
+            description: "Learning event-driven systems, microservices, and scalable system architectures."
         },
         {
             icon: "fas fa-chart-line",
-            title: "Data Science",
-            description: "Analyzing and visualizing complex datasets"
+            title: "Data & Intelligent Systems",
+            description: "Working with data-driven systems, recommendation engines, and analytics pipelines."
         },
         {
-            icon: "fas fa-robot",
-            title: "AI Integration",
-            description: "Building intelligent systems that enhance user experience"
-        },
-        {
-            icon: "fas fa-code-branch",
-            title: "Full Stack Development",
-            description: "Creating scalable and maintainable web applications"
-        },
-        {
-            icon: "fas fa-cloud-upload-alt",
-            title: "Cloud Development & Deployment",
-            description: "Building and deploying scalable applications on cloud platforms like AWS"
+            icon: "fas fa-cloud",
+            title: "Cloud & Scalable Infrastructure",
+            description: "Building and deploying applications using cloud services and modern DevOps practices."
         }
     ],
-
     // Experience & Achievements
     experience: [
         {
@@ -218,7 +248,7 @@ research: [
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    
+
     // Total skills across all categories
     const totalSkills = CONFIG.skills.reduce(
         (sum, skill) => sum + skill.items.length,
@@ -228,9 +258,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // Set dynamic numbers
     document.getElementById("projectCount").dataset.target = CONFIG.projects.length;
     document.getElementById("techCount").dataset.target = totalSkills;
-    document.getElementById("certCount").dataset.target = CONFIG.certifications.length; 
+    document.getElementById("certCount").dataset.target = CONFIG.certifications.length;
 
-    animateCounters(); 
+    animateCounters();
 });
 
 
@@ -264,7 +294,7 @@ hamburger.addEventListener('click', () => {
 // Close menu when clicking outside the navbar
 document.addEventListener('click', (e) => {
     const isClickInsideNav = navbar.contains(e.target);
-    
+
     if (!isClickInsideNav && navMenu.classList.contains('active')) {
         hamburger.classList.remove('active');
         navMenu.classList.remove('active');
@@ -276,7 +306,7 @@ navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
         navLinks.forEach(l => l.classList.remove('active'));
         link.classList.add('active');
-        
+
         // Close mobile menu
         hamburger.classList.remove('active');
         navMenu.classList.remove('active');
@@ -287,7 +317,7 @@ navLinks.forEach(link => {
 window.addEventListener('scroll', () => {
     let current = '';
     const sections = document.querySelectorAll('section');
-    
+
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
@@ -315,7 +345,7 @@ window.addEventListener('scroll', () => {
 
 // function typeWriter() {
 //     const currentTitle = CONFIG.titles[titleIndex];
-    
+
 //     if (isDeleting) {
 //         typingText.textContent = currentTitle.substring(0, charIndex - 1);
 //         charIndex--;
@@ -374,19 +404,19 @@ function animateCounters() {
 
 function populateSkills() {
     const skillsContainer = document.getElementById('skillsContainer');
-    
+
     CONFIG.skills.forEach((skillCategory, index) => {
         const skillCard = document.createElement('div');
         skillCard.className = 'skill-category fade-in';
         skillCard.style.transitionDelay = `${index * 0.1}s`;
-        
+
         skillCard.innerHTML = `
             <h3><i class="${skillCategory.icon}"></i> ${skillCategory.category}</h3>
             <div class="skill-tags">
                 ${skillCategory.items.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
             </div>
         `;
-        
+
         skillsContainer.appendChild(skillCard);
     });
 }
@@ -397,12 +427,12 @@ function populateSkills() {
 
 function populateProjects() {
     const projectsGrid = document.getElementById('projectsGrid');
-    
+
     CONFIG.projects.forEach((project, index) => {
         const projectCard = document.createElement('div');
         projectCard.className = 'project-card fade-in';
         projectCard.style.transitionDelay = `${index * 0.1}s`;
-        
+
         projectCard.innerHTML = `
             <div class="project-header">
                 <h3>${project.title}</h3>
@@ -419,7 +449,7 @@ function populateProjects() {
                 </div>
             </div>
         `;
-        
+
         projectsGrid.appendChild(projectCard);
     });
 }
@@ -430,12 +460,12 @@ function populateProjects() {
 
 function populateExperience() {
     const timeline = document.getElementById('experienceTimeline');
-    
+
     CONFIG.experience.forEach((exp, index) => {
         const timelineItem = document.createElement('div');
         timelineItem.className = 'timeline-item fade-in';
         timelineItem.style.transitionDelay = `${index * 0.1}s`;
-        
+
         timelineItem.innerHTML = `
             <div class="timeline-content">
                 <h3>${exp.title}</h3>
@@ -444,7 +474,7 @@ function populateExperience() {
             </div>
             <div class="timeline-dot"></div>
         `;
-        
+
         timeline.appendChild(timelineItem);
     });
 }
@@ -454,21 +484,21 @@ function populateExperience() {
 
 function populateResearch() {
     const researchGrid = document.getElementById('researchGrid');
-    
+
     if (!researchGrid) {
         console.error('Research grid element not found');
         return;
     }
-    
+
     CONFIG.research.forEach((research, index) => {
         const researchCard = document.createElement('div');
         researchCard.className = 'research-card fade-in';
         researchCard.style.transitionDelay = `${index * 0.1}s`;
-        
+
         let statusClass = '';
         let statusText = '';
-        
-        switch(research.status) {
+
+        switch (research.status) {
             case 'published':
                 statusClass = 'status-completed';
                 statusText = 'Published';
@@ -489,7 +519,7 @@ function populateResearch() {
                 statusClass = 'status-ongoing';
                 statusText = 'In Progress';
         }
-        
+
         researchCard.innerHTML = `
             <div class="research-icon"><i class="${research.icon}"></i></div>
             <h3>${research.title}</h3>
@@ -508,30 +538,30 @@ function populateResearch() {
                 </div>
             ` : ''}
         `;
-        
+
         researchGrid.appendChild(researchCard);
     });
 }
 
 function populateInterests() {
     const interestsContainer = document.getElementById('interestsContainer');
-    
+
     if (!interestsContainer) {
         console.error('Interests container element not found');
         return;
     }
-    
+
     CONFIG.interests.forEach((interest, index) => {
         const interestItem = document.createElement('div');
         interestItem.className = 'interest-item fade-in';
         interestItem.style.transitionDelay = `${index * 0.1}s`;
-        
+
         interestItem.innerHTML = `
             <div class="interest-icon"><i class="${interest.icon}"></i></div>
             <h4>${interest.title}</h4>
             <p>${interest.description}</p>
         `;
-        
+
         interestsContainer.appendChild(interestItem);
     });
 }
@@ -541,12 +571,12 @@ function populateInterests() {
 
 function populateCertifications() {
     const certificationsGrid = document.getElementById('certificationsGrid');
-    
+
     CONFIG.certifications.forEach((cert, index) => {
         const certCard = document.createElement('div');
         certCard.className = 'cert-card fade-in';
         certCard.style.transitionDelay = `${index * 0.1}s`;
-        
+
         certCard.innerHTML = `
             <div class="cert-icon"><i class="fas fa-certificate"></i></div>
             <h3>${cert.title}</h3>
@@ -556,7 +586,7 @@ function populateCertifications() {
                 View Certificate <i class="fas fa-arrow-right"></i>
             </a>
         `;
-        
+
         certificationsGrid.appendChild(certCard);
     });
 }
@@ -590,7 +620,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
     const parallaxElements = document.querySelectorAll('.hero-image, .orbit');
-    
+
     parallaxElements.forEach(element => {
         const speed = element.dataset.speed || 0.5;
         element.style.transform = `translateY(${scrolled * speed}px)`;
@@ -607,7 +637,7 @@ function createScrollToTop() {
     scrollBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
     scrollBtn.setAttribute('aria-label', 'Scroll to top');
     document.body.appendChild(scrollBtn);
-    
+
     window.addEventListener('scroll', () => {
         if (window.pageYOffset > 300) {
             scrollBtn.classList.add('visible');
@@ -615,7 +645,7 @@ function createScrollToTop() {
             scrollBtn.classList.remove('visible');
         }
     });
-    
+
     scrollBtn.addEventListener('click', () => {
         window.scrollTo({
             top: 0,
@@ -639,9 +669,9 @@ window.addEventListener('load', () => {
             <p>Loading Portfolio...</p>
         </div>
     `;
-    
+
     document.body.style.overflow = 'hidden';
-    
+
     setTimeout(() => {
         loader.style.opacity = '0';
         document.body.style.overflow = 'auto';
@@ -663,7 +693,7 @@ const konamiPattern = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLef
 document.addEventListener('keydown', (e) => {
     konamiCode.push(e.key);
     konamiCode.splice(-konamiPattern.length - 1, konamiCode.length - konamiPattern.length);
-    
+
     if (konamiCode.join('') === konamiPattern.join('')) {
         activateEasterEgg();
     }
@@ -706,23 +736,23 @@ function showCustomAlert() {
 function activateEasterEgg() {
     // Create confetti effect
     createConfetti();
-    
+
     // Rainbow animation
     document.body.style.animation = 'rainbow 2s linear infinite';
-    
+
     // Play with the gradient
     const allGradientElements = document.querySelectorAll('.logo, .section-title, h1');
     allGradientElements.forEach(el => {
         el.style.animation = 'rainbow 2s linear infinite';
     });
-    
+
     // Show congratulations message
     setTimeout(() => {
         document.body.style.animation = '';
         allGradientElements.forEach(el => {
             el.style.animation = '';
         });
-        
+
         // Custom alert with better styling
         showCustomAlert();
     }, 3000);
@@ -730,7 +760,7 @@ function activateEasterEgg() {
 
 function createConfetti() {
     const colors = ['#6366f1', '#8b5cf6', '#ec4899', '#f59e0b', '#10b981'];
-    
+
     for (let i = 0; i < 100; i++) {
         const confetti = document.createElement('div');
         confetti.className = 'confetti';
@@ -739,7 +769,7 @@ function createConfetti() {
         confetti.style.animationDelay = Math.random() * 3 + 's';
         confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
         document.body.appendChild(confetti);
-        
+
         setTimeout(() => confetti.remove(), 5000);
     }
 }
@@ -752,7 +782,7 @@ function createConfetti() {
 // Lazy load images
 function lazyLoadImages() {
     const images = document.querySelectorAll('img[data-src]');
-    
+
     const imageObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -763,7 +793,7 @@ function lazyLoadImages() {
             }
         });
     });
-    
+
     images.forEach(img => imageObserver.observe(img));
 }
 
@@ -790,18 +820,18 @@ function createResearchFilter() {
     const researchSection = document.querySelector('.research .container');
     const filterContainer = document.createElement('div');
     filterContainer.className = 'research-filters';
-    
+
     const filters = ['All', 'Ongoing', 'Completed', 'Planned'];
-    
+
     filters.forEach(filter => {
         const button = document.createElement('button');
         button.className = 'filter-btn';
         button.textContent = filter;
-        
+
         if (filter === 'All') {
             button.classList.add('active');
         }
-        
+
         button.addEventListener('click', () => {
             document.querySelectorAll('.research-filters .filter-btn').forEach(btn => {
                 btn.classList.remove('active');
@@ -809,17 +839,17 @@ function createResearchFilter() {
             button.classList.add('active');
             filterResearch(filter.toLowerCase());
         });
-        
+
         filterContainer.appendChild(button);
     });
-    
+
     const researchGrid = document.getElementById('researchGrid');
     researchSection.insertBefore(filterContainer, researchGrid);
 }
 
 function filterResearch(category) {
     const researchCards = document.querySelectorAll('.research-card');
-    
+
     researchCards.forEach(card => {
         if (category === 'all') {
             card.style.display = 'block';
@@ -866,7 +896,7 @@ const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
-            
+
             // Trigger counter animation when about section is visible
             if (entry.target.id === 'about' && !counterAnimated) {
                 animateCounters();
@@ -884,7 +914,7 @@ const observer = new IntersectionObserver((entries) => {
 
 // contactForm.addEventListener('submit', (e) => {
 //     e.preventDefault();
-    
+
 //     // Add your form submission logic here
 //         // For now, just show a success message
 //     alert('Thank you for your message! I will get back to you soon.');
@@ -917,7 +947,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
     const parallaxElements = document.querySelectorAll('.hero-image, .orbit');
-    
+
     parallaxElements.forEach(element => {
         const speed = element.dataset.speed || 0.5;
         element.style.transform = `translateY(${scrolled * speed}px)`;
@@ -933,20 +963,20 @@ function createThemeToggle() {
     themeToggle.className = 'theme-toggle';
     themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
     themeToggle.setAttribute('aria-label', 'Toggle theme');
-    
+
     navbar.querySelector('.nav-container').appendChild(themeToggle);
-    
+
     // Check for saved theme preference
     const currentTheme = localStorage.getItem('theme') || 'dark';
     document.documentElement.setAttribute('data-theme', currentTheme);
-    
+
     if (currentTheme === 'light') {
         themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
     }
-    
+
     themeToggle.addEventListener('click', () => {
         let theme = document.documentElement.getAttribute('data-theme');
-        
+
         if (theme === 'dark') {
             document.documentElement.setAttribute('data-theme', 'light');
             localStorage.setItem('theme', 'light');
@@ -970,7 +1000,7 @@ function createParticles() {
     const particlesContainer = document.createElement('div');
     particlesContainer.className = 'particles-container';
     document.querySelector('.hero').appendChild(particlesContainer);
-    
+
     for (let i = 0; i < 50; i++) {
         const particle = document.createElement('div');
         particle.className = 'particle';
@@ -991,7 +1021,7 @@ createParticles();
 
 function animateSkillBars() {
     const skillTags = document.querySelectorAll('.skill-tag');
-    
+
     skillTags.forEach((tag, index) => {
         setTimeout(() => {
             tag.style.transform = 'scale(1)';
@@ -1008,18 +1038,18 @@ function createProjectFilter() {
     const projectsSection = document.querySelector('.projects .container');
     const filterContainer = document.createElement('div');
     filterContainer.className = 'project-filters';
-    
+
     const filters = ['All', 'Web App', 'Chrome Extension', 'Mobile', 'AI/ML'];
-    
+
     filters.forEach(filter => {
         const button = document.createElement('button');
         button.className = 'filter-btn';
         button.textContent = filter;
-        
+
         if (filter === 'All') {
             button.classList.add('active');
         }
-        
+
         button.addEventListener('click', () => {
             document.querySelectorAll('.filter-btn').forEach(btn => {
                 btn.classList.remove('active');
@@ -1027,16 +1057,16 @@ function createProjectFilter() {
             button.classList.add('active');
             filterProjects(filter);
         });
-        
+
         filterContainer.appendChild(button);
     });
-    
+
     projectsSection.insertBefore(filterContainer, document.getElementById('projectsGrid'));
 }
 
 function filterProjects(category) {
     const projectCards = document.querySelectorAll('.project-card');
-    
+
     projectCards.forEach(card => {
         if (category === 'All') {
             card.style.display = 'block';
@@ -1078,11 +1108,11 @@ function init() {
     populateInterests(); // NEW
     populateExperience();
     populateCertifications();
-    
+
     // Observe all sections and fade-in elements
     const sections = document.querySelectorAll('section');
     const fadeElements = document.querySelectorAll('.fade-in');
-    
+
     sections.forEach(section => observer.observe(section));
     fadeElements.forEach(element => observer.observe(element));
 }
