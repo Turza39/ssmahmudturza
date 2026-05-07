@@ -1097,6 +1097,29 @@ function filterProjects(category) {
 // setTimeout(createProjectFilter, 500);
 
 // ============================================
+// MAKE CONTACT CARDS FULLY CLICKABLE
+// ============================================
+
+function makeContactCardsClickable() {
+    const contactItems = document.querySelectorAll('.contact-content-center .contact-item');
+    
+    contactItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+            // Prevent double-trigger if clicking on the link directly
+            if (e.target.tagName === 'A') {
+                return;
+            }
+            
+            // Find the link in the contact item
+            const link = item.querySelector('a');
+            if (link) {
+                link.click();
+            }
+        });
+    });
+}
+
+// ============================================
 // INITIALIZE EVERYTHING
 // ============================================
 
@@ -1108,6 +1131,9 @@ function init() {
     populateInterests(); // NEW
     populateExperience();
     populateCertifications();
+
+    // Make contact cards fully clickable
+    makeContactCardsClickable();
 
     // Observe all sections and fade-in elements
     const sections = document.querySelectorAll('section');
