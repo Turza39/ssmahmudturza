@@ -21,17 +21,17 @@ const CONFIG = {
         {
             category: "Languages",
             icon: "fas fa-code",
-            items: ["Python", "JavaScript", "C++", "Java"]
+            items: ["Python", "JavaScript", "TypeScript", "C++", "Java"]
         },
         {
             category: "Frontend",
             icon: "fas fa-laptop-code",
-            items: ["React.js", "Vite", "HTML", "CSS"]
+            items: ["React.js", "Next.js", "Vite", "HTML", "CSS"]
         },
         {
             category: "Backend",
             icon: "fas fa-server",
-            items: ["Node.js", "Express.js", "FastAPI", "REST API"]
+            items: ["Node.js", "Nest.js", "FastAPI", "REST API"]
         },
         {
             category: "Database",
