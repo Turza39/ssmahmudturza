@@ -56,22 +56,12 @@ const CONFIG = {
         {
             category: "Async & Messaging",
             icon: "fas fa-exchange-alt",
-            items: ["Background Jobs (Celery/Workers)", "Message Queues (RabbitMQ)"]
+            items: ["Background Jobs (Celery/Workers)", "Message Queues (Redis)"]
         },
         {
             category: "Caching & Performance",
             icon: "fas fa-tachometer-alt",
             items: ["Redis (Caching, Rate Limiting)"]
-        },
-        {
-            category: "Search Systems",
-            icon: "fas fa-search",
-            items: ["Full-Text Search", "Vector Search"]
-        },
-        {
-            category: "Observability",
-            icon: "fas fa-chart-line",
-            items: ["Prometheus (Metrics)", "Grafana (Dashboards)"]
         },
         {
             category: "Networking",
@@ -138,10 +128,10 @@ const CONFIG = {
             type: "Conference Paper",
             icon: "fas fa-leaf",
             year: "2025",
-            status: "published", // or "completed", "published", "under-review"
+            status: "published",
             abstract: "This research explores deep learning methodologies for identifying and classifying invasive alien plant species in Bangladesh using computer vision techniques.",
             links: {
-                paper: null, // Add link when available
+                paper: "{https://doi.org/10.1109/ICCIT68739.2025.11491085",
                 github: null,
                 slides: null
             }
@@ -151,38 +141,57 @@ const CONFIG = {
             conference: "Shahjalal University of Science and Technology",
             type: "Thesis (Ongoing)",
             status: "Ongoing Thesis",
-            year: "2026"
+            icon: "fas fa-flask",
+            year: "2026",
+            abstract: "This research analyse and forecasts river morphological changes using spatiotemporal neural models.",
+            links: {
+                paper: "https://drive.google.com/file/d/1f1CWO7tC4X2CJQJ8k69edKKz5D-Hwrut/view?usp=sharing"
+            }
+        },
+        {
+            title: "Does Audio-Text Fusion Improve Bangla Emotion Detection? An Empirical Study on a Novel Multimodal Dataset with Attention-Based Fusion",
+            conference: "5th IEEE International Conference on Signal Processing, Information, Communication and Systems, 2026",
+            type: "Conference Paper",
+            year: "2026",
+            icon: "fas fa-flask",
+            status: "Pending",
+            abstract: "This research establishes a base on emotion detection in Bangla language using a novel voice and text based multimodal dataset.",
+
+            links: {
+                paper: null,
+                github: null,
+                slides: null
+            }
         }
-        // Add more research papers here as needed
     ],
 
     // Research Interests
     interests: [
-        {
-            icon: "fas fa-brain",
-            title: "Deep Learning & Research",
-            description: "Exploring deep learning models and working on research-driven solutions for real-world problems."
-        },
+        // {
+        //     icon: "fas fa-brain",
+        //     title: "Deep Learning & Research",
+        //     description: "Exploring deep learning models and working on research-driven solutions for real-world problems."
+        // },
         {
             icon: "fas fa-robot",
             title: "Large Language Models (LLMs)",
             description: "Building and experimenting with LLM-based systems, including RAG and AI-powered applications."
         },
         {
-            icon: "fas fa-server",
-            title: "Backend & System Design",
-            description: "Designing scalable APIs, distributed systems, and high-performance backend architectures."
-        },
-        {
-            icon: "fas fa-network-wired",
-            title: "Distributed Systems",
-            description: "Learning event-driven systems, microservices, and scalable system architectures."
-        },
-        {
             icon: "fas fa-chart-line",
             title: "Data & Intelligent Systems",
             description: "Working with data-driven systems, recommendation engines, and analytics pipelines."
         },
+        {
+            icon: "fas fa-server",
+            title: "Backend & System Design",
+            description: "Designing scalable APIs, distributed systems, and high-performance backend architectures."
+        },
+        // {
+        //     icon: "fas fa-network-wired",
+        //     title: "Distributed Systems",
+        //     description: "Learning event-driven systems, microservices, and scalable system architectures."
+        // },
         {
             icon: "fas fa-cloud",
             title: "Cloud & Scalable Infrastructure",
@@ -198,12 +207,6 @@ const CONFIG = {
             description: "Placed 1st runner up."
         },
         {
-            title: "Executive Member",
-            organization: "SUST CSE Society",
-            date: "July 2023 - Dec 2023",
-            description: "Active member contributing to organizing technical events and workshops."
-        },
-        {
             title: "DU AI Challenge",
             organization: "Dhaka University",
             date: "2025",
@@ -214,7 +217,13 @@ const CONFIG = {
             organization: "Khulna University of Engineering and Technology (KUET)",
             date: "2025",
             description: "Placed 43rd out of 108 teams in data science competition."
-        }
+        },
+        {
+            title: "Executive Member",
+            organization: "SUST CSE Society",
+            date: "July 2023 - Dec 2023",
+            description: "Active member contributing to organizing technical events and workshops."
+        },
     ],
 
     // Certifications
@@ -333,6 +342,20 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+
+// Setup mode toggle button
+function setupModeToggle() {
+    const toggleBtn = document.getElementById('modeToggle');
+    if (toggleBtn) {
+        toggleBtn.addEventListener('click', () => {
+            localStorage.setItem('portfolioMode', 'infra');
+            window.location.href = 'infra.html';
+        });
+    }
+}
+
+// Initialize mode toggle when DOM is ready
+document.addEventListener('DOMContentLoaded', setupModeToggle);
 
 // ============================================
 // TYPING ANIMATION
