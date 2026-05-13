@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S. S. Mahmud Turza | Infrastructure Engineer</title>
+    <link rel="stylesheet" href="infra.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav id="navbar" class="infra-navbar">
+        <div class="nav-container">
+            <div class="logo">turza.cloud</div>
+            <ul class="nav-menu">
+                <li><a href="#dashboard" class="nav-link">Dashboard</a></li>
+                <li><a href="#manifest" class="nav-link">Manifest</a></li>
+                <li><a href="#cluster" class="nav-link">Cluster</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#compute" class="nav-link">Compute</a></li>
+                <li><a href="#timeline" class="nav-link">Timeline</a></li>
+                <li><a href="#network" class="nav-link">Network</a></li>
+            </ul>
+            <div class="mode-toggle">
+                <button id="modeToggle" class="toggle-btn" title="Switch to Classic Mode">
+                    <i class="fas fa-server"></i>
+                </button>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Section (Hero → Orchestrator) -->
+    <section id="dashboard" class="dashboard">
+        <div class="container">
+            <div class="dashboard-header">
+                <div class="status-bar">
+                    <span class="status-indicator online"></span>
+                    <span class="status-text">CLUSTER ONLINE</span>
+                </div>
+            </div>
+
+            <div class="orchestrator-grid">
+                <!-- Left Panel -->
+                <div class="dashboard-panel left-panel">
+                    <div class="panel-title">
+                        <i class="fas fa-cube"></i> Orchestrator Status
+                    </div>
+                    <div class="info-block">
+                        <div class="info-row">
+                            <span class="label">Engineer:</span>
+                            <span class="value">S. S. Mahmud Turza</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="label">Runtime:</span>
+                            <span class="value">Production</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="label">Uptime:</span>
+                            <span class="value" id="uptime">0d 0h 0m</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="label">Cluster:</span>
+                            <span class="value">turza-cloud-prod</span>
+                        </div>
+                    </div>
+
+                    <div class="metrics-block">
+                        <div class="metric-item">
+                            <div class="metric-header">
+                                <span>Services</span>
+                                <span class="metric-value" id="serviceCount">0</span>
+                            </div>
+                            <div class="metric-bar">
+                                <div class="metric-fill" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-header">
+                                <span>Technologies</span>
+                                <span class="metric-value" id="techCountInfra">0</span>
+                            </div>
+                            <div class="metric-bar">
+                                <div class="metric-fill" style="width: 100%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Panel -->
+                <div class="dashboard-panel right-panel">
+                    <div class="panel-title">
+                        <i class="fas fa-heartbeat"></i> Health Status
+                    </div>
+                    <div class="health-grid" id="healthGrid">
+                        <!-- Will be populated by JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section → Container Manifest -->
+    <section id="manifest" class="manifest">
+        <div class="container">
+            <div class="section-header">
+                <div class="header-icon">
+                    <i class="fas fa-file-code"></i>
+                </div>
+                <h2>Container Manifest</h2>
+                <p class="header-subtitle">Deployment Specification</p>
+            </div>
+
+            <div class="manifest-content">
+                <div class="manifest-spec">
+                    <div class="spec-section">
+                        <div class="spec-title">apiVersion: v1</div>
+                        <div class="spec-line">kind: Engineer</div>
+                        <div class="spec-line">metadata:</div>
+                        <div class="spec-line indent-1">name: S. S. Mahmud Turza</div>
+                        <div class="spec-line indent-1">status: Active</div>
+                        <div class="spec-line">spec:</div>
+                        <div class="spec-line indent-1">role: Backend Developer & Researcher</div>
+                        <div class="spec-line indent-1">specializations:</div>
+                        <div class="spec-line indent-2">- Scalable Systems</div>
+                        <div class="spec-line indent-2">- High-Performance APIs</div>
+                        <div class="spec-line indent-2">- AI-Powered Applications</div>
+                        <div class="spec-line indent-1">focus:</div>
+                        <div class="spec-line indent-2">- Deep Learning</div>
+                        <div class="spec-line indent-2">- Large Language Models</div>
+                        <div class="spec-line indent-2">- Real-World Problem Solving</div>
+                    </div>
+                </div>
+
+                <div class="education-specs">
+                    <div class="education-spec-card">
+                        <div class="spec-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>Current Education</h3>
+                        <p class="spec-value">BSc in Computer Science and Engineering</p>
+                        <p class="spec-meta">Shahjalal University of Science and Technology</p>
+                        <p class="spec-detail">CGPA: 3.50/4.00 | 2022 - Present</p>
+                    </div>
+                    <div class="education-spec-card">
+                        <div class="spec-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h3>Academic Background</h3>
+                        <p class="spec-value">Higher Secondary Certificate (HSC)</p>
+                        <p class="spec-meta">Notre Dame College, Dhaka</p>
+                        <p class="spec-detail">GPA: 5.00/5.00 | 2018 - 2020</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section → Microservices -->
+    <section id="services" class="microservices">
+        <div class="container">
+            <div class="section-header">
+                <div class="header-icon">
+                    <i class="fas fa-boxes"></i>
+                </div>
+                <h2>Microservices Deployments</h2>
+                <p class="header-subtitle">Production Services & Scalable Infrastructure</p>
+            </div>
+
+            <div class="services-grid" id="servicesGrid">
+                <!-- Will be populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section → AI Compute Cluster -->
+    <section id="compute" class="compute-cluster">
+        <div class="container">
+            <div class="section-header">
+                <div class="header-icon">
+                    <i class="fas fa-microchip"></i>
+                </div>
+                <h2>Compute Cluster</h2>
+                <p class="header-subtitle">AI/ML Training & Research Pipelines</p>
+            </div>
+
+            <div class="compute-grid" id="computeGrid">
+                <!-- Will be populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section → Deployment Timeline -->
+    <section id="timeline" class="deployment-timeline">
+        <div class="container">
+            <div class="section-header">
+                <div class="header-icon">
+                    <i class="fas fa-code-branch"></i>
+                </div>
+                <h2>Deployment History</h2>
+                <p class="header-subtitle">CI/CD Pipeline & Release Timeline</p>
+            </div>
+
+            <div class="pipeline-container" id="pipelineContainer">
+                <!-- Will be populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section → Network Layer -->
+    <section id="network" class="network-layer">
+        <div class="container">
+            <div class="section-header">
+                <div class="header-icon">
+                    <i class="fas fa-router"></i>
+                </div>
+                <h2>Network Ingress</h2>
+                <p class="header-subtitle">Service Endpoints & Communication Channels</p>
+            </div>
+
+            <div class="ingress-table">
+                <div class="ingress-header">
+                    <div class="ingress-col">Service</div>
+                    <div class="ingress-col">Endpoint</div>
+                    <div class="ingress-col">Status</div>
+                    <div class="ingress-col">Action</div>
+                </div>
+
+                <div class="ingress-row">
+                    <div class="ingress-col">
+                        <div class="service-label"><i class="fas fa-envelope"></i> Email</div>
+                    </div>
+                    <div class="ingress-col">
+                        <code>mahmudturza@gmail.com</code>
+                    </div>
+                    <div class="ingress-col">
+                        <span class="status-badge active">ACTIVE</span>
+                    </div>
+                    <div class="ingress-col">
+                        <a href="mailto:mahmudturza@gmail.com" class="ingress-link">
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="ingress-row">
+                    <div class="ingress-col">
+                        <div class="service-label"><i class="fab fa-linkedin"></i> LinkedIn</div>
+                    </div>
+                    <div class="ingress-col">
+                        <code>linkedin.turza.dev</code>
+                    </div>
+                    <div class="ingress-col">
+                        <span class="status-badge active">ACTIVE</span>
+                    </div>
+                    <div class="ingress-col">
+                        <a href="https://www.linkedin.com/in/s-s-mahmud-turza-30034b226/" target="_blank"
+                            class="ingress-link">
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="ingress-row">
+                    <div class="ingress-col">
+                        <div class="service-label"><i class="fab fa-github"></i> GitHub</div>
+                    </div>
+                    <div class="ingress-col">
+                        <code>github.turza.dev</code>
+                    </div>
+                    <div class="ingress-col">
+                        <span class="status-badge active">ACTIVE</span>
+                    </div>
+                    <div class="ingress-col">
+                        <a href="https://github.com/Turza39" target="_blank" class="ingress-link">
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="ingress-row">
+                    <div class="ingress-col">
+                        <div class="service-label"><i class="fab fa-kaggle"></i> Kaggle</div>
+                    </div>
+                    <div class="ingress-col">
+                        <code>kaggle.turza.dev</code>
+                    </div>
+                    <div class="ingress-col">
+                        <span class="status-badge active">ACTIVE</span>
+                    </div>
+                    <div class="ingress-col">
+                        <a href="https://www.kaggle.com/ssmahmudturza" target="_blank" class="ingress-link">
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="ingress-row">
+                    <div class="ingress-col">
+                        <div class="service-label"><i class="fas fa-phone"></i> Phone</div>
+                    </div>
+                    <div class="ingress-col">
+                        <code>+880 1781 286700</code>
+                    </div>
+                    <div class="ingress-col">
+                        <span class="status-badge active">ACTIVE</span>
+                    </div>
+                    <div class="ingress-col">
+                        <a href="tel:+8801781286700" class="ingress-link">
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="ingress-row">
+                    <div class="ingress-col">
+                        <div class="service-label"><i class="fas fa-map-marker-alt"></i> Location</div>
+                    </div>
+                    <div class="ingress-col">
+                        <code>Dhaka, Bangladesh</code>
+                    </div>
+                    <div class="ingress-col">
+                        <span class="status-badge active">ACTIVE</span>
+                    </div>
+                    <div class="ingress-col">
+                        <span style="opacity: 0.5;">-</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="connection-message">
+                <p><i class="fas fa-lightbulb"></i> Always open to discussing new projects, research collaborations,
+                    and infrastructure challenges.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p><code>turza.cloud/v1</code> — Infrastructure engineered by S. S. Mahmud Turza</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="infra.js"></script>
+</body>
+
+</html>
