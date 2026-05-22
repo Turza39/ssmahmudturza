@@ -92,7 +92,7 @@ const CONFIG = {
             description: "Developed a full-stack web app with an ML-based recommendation module for personalized tour packages. Built REST APIs with Node.js/Express and a React frontend; integrated Python model for recommendations.",
             technologies: ["React", "Node.js", "Express", "Python", "Scikit-learn", "MongoDB"],
             github: "https://github.com/Kaoserahamed/Task",
-            live: null
+            live: "https://frontend-blue-sigma-62.vercel.app/"
         },
         {
             title: "MiniBot Chrome Extension",
